@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>device</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - device discover/lost handle
+-(void)registerObserver{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleDeviceDiscovered:) name:kDMJSCapabilityAdded object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleDeviceLost:) name:kDMJSCapabilityLost object:nil];
+}
+
+-(void)handleDeviceDiscovered:(NSNotification *)notif{
+}
+
+-(void)handleDeviceLost:(NSNotification *)notif{
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>63ECECD2-ABE6-404B-A78B-070D3C4BB214</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>device discover/lost Observer handler</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
