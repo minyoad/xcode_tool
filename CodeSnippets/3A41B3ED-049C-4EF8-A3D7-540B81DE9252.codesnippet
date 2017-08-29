@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>sci</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)showActivityIndicator:(BOOL)show {
+    DDLogError(@"showActivityIndicator,show=%d",show);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(show) {
+            if (!_activityIndicator) {
+                _activityIndicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+                [_activityIndicator setColor:[UIColor grayColor]];
+                
+                _activityIndicator.hidesWhenStopped=YES;
+                
+                // 设置指示器位置
+                _activityIndicator.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.5);
+                
+                [self.view addSubview:_activityIndicator];
+            }
+            
+            //        _activityIndicator.hidden = !show;
+            
+            [_activityIndicator startAnimating];
+        }
+        else{
+            _activityIndicator.hidden = YES;
+            [_activityIndicator stopAnimating];
+            
+        }
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3A41B3ED-049C-4EF8-A3D7-540B81DE9252</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>showActivityIndicator</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

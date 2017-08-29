@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>popd</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - PopoverViewDelegate
+- (void)popoverView:(PopoverView *)popoverView didSelectItemAtIndex:(NSInteger)index {
+    
+    switch (index) {
+        case 0: //edit
+        {
+            [self editButtonTapped];
+            
+        }
+        break;
+        case 1:
+        {
+            [self removeButtonTapped];
+        }
+        break;
+        case 2:
+        {
+            [self renameButtonTapped];
+        }
+        break;
+        case 3:
+        {
+            [self deleteButtomTapped];
+        }
+        break;
+        
+        
+        default:
+        break;
+    }
+    
+    
+}
+
+- (void)popoverViewDidDismiss:(PopoverView *)popoverView {
+    _pv=nil;
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CE8C9086-35CA-44EC-8FEB-65031EA57C3C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>PopoverView Delegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

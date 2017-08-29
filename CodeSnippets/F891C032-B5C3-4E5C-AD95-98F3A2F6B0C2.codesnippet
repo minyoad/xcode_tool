@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>btd</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - BottomToolBar Delegate
+- (NSInteger)numberOfButtons:(BottomToolBar*)toolbar {
+    
+    return 2;
+    
+}
+
+- (UIButton *)toolbar:(BottomToolBar *)toolbar buttonAtIndex:(NSInteger )index {
+    
+    UIButton *btn=[[UIButton alloc]init];
+    
+    switch (index) {
+        case 0:
+        {
+            [btn setTitle:@"Select" forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"ambi_icon_screen"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(showAlert) forControlEvents:UIControlEventTouchUpInside];
+        }
+            break;
+            
+        case 1:
+        {
+            [btn setTitle:@"List" forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"ambi_icon_screen"] forState:UIControlStateNormal];
+        }
+            break;
+            
+        
+        default:
+            break;
+    }
+    
+    return btn;
+}
+
+-(void)showAlert{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                   message:@"This is an alert."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F891C032-B5C3-4E5C-AD95-98F3A2F6B0C2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>BottomToolBar Delegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

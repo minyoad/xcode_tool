@@ -3,22 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mainthread</string>
+	<string>initf</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    if(![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(&lt;#functionName#&gt;) withObject:nil waitUntilDone:NO];
-        return;
-    }</string>
+	<string>-(id)initWithFrame:(CGRect)frame{
+    self=[super initWithFrame:frame];
+    if (self) {
+        &lt;#statements#&gt;
+    }
+    
+    return self;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>77EFF893-6A05-441E-8520-326258B1169F</string>
+	<string>015A097D-169D-408F-B9ED-CBDDCCFE8EB6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>run in main thread</string>
+	<string>initWithFrame</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

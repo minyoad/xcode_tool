@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cld</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)showList{
+    
+    CommonListViewController *listVC=[[CommonListViewController alloc]init];
+    
+    [listVC setList:[self getChannelListsDisplayNameList]];
+    
+    listVC.delegate=self;
+    
+    listVC.title=@"Select";
+    
+    
+    [self.navigationController pushViewController:listVC animated:YES];
+    
+    
+}
+
+#pragma mark - commonlistviewcontrollerdelegate
+-(void)ListViewController:(CommonListViewController*)listViewController didSelectedIndexPath:(NSIndexPath*)indexPath; {
+    //todo
+    
+    
+    
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DEA5C6C7-8460-4887-9199-0AA16757F492</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CommonListViewController using</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

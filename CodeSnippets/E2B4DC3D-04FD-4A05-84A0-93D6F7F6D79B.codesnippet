@@ -3,22 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mainthread</string>
+	<string>dlnab</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    if(![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(&lt;#functionName#&gt;) withObject:nil waitUntilDone:NO];
-        return;
-    }</string>
+	<string>#pragma mark - TPVisionBrowseOperationDelegate
+- (void)navigationSuccessful:(CPSItem*)currentItem{
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [self reloadData]; 
+    });
+}
+
+- (void)navigationUpdation:(CPSItem*)currentItem;
+{
+    
+}
+- (void)errorNavigating:(NSError*)error forCurrentItem:(CPSItem*)currentItem{
+    
+}
+-(void)reloadData{
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>77EFF893-6A05-441E-8520-326258B1169F</string>
+	<string>E2B4DC3D-04FD-4A05-84A0-93D6F7F6D79B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>run in main thread</string>
+	<string>TPVisionBrowseOperationDelegate</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

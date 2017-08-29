@@ -3,22 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mainthread</string>
+	<string>cmd</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    if(![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(&lt;#functionName#&gt;) withObject:nil waitUntilDone:NO];
-        return;
-    }</string>
+	<string>#pragma mark - context menu delegate
+-(NSArray*)textArrayOfContextMenu{
+    return nil;
+    
+}
+-(NSArray*)imageNameArrayOfContextMenu{
+    return nil;
+}
+
+-(void)contextMenuItemTapped:(NSInteger)index{
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>77EFF893-6A05-441E-8520-326258B1169F</string>
+	<string>C4508DEB-78F8-4F1E-BD23-37AD5ED9FFC8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>run in main thread</string>
+	<string>contextmenu delegate</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

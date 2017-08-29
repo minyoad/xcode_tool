@@ -3,22 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mainthread</string>
+	<string>inputv</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    if(![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(&lt;#functionName#&gt;) withObject:nil waitUntilDone:NO];
-        return;
-    }</string>
+	<string>    __weak typeof(self) weakSelf = self;
+    InputAlertView *alertView = [InputAlertView alertView];
+    alertView.defaultText = @"";
+    alertView.title=@"";
+    [alertView confirmBtnClickBlock:^(NSString *inputString) {
+        
+        NSString *playlistName=inputString;
+        
+
+        
+    }];
+    [alertView show];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>77EFF893-6A05-441E-8520-326258B1169F</string>
+	<string>CE8FE5FA-4B10-4761-8738-A88575E7421B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>run in main thread</string>
+	<string>InputAlertView using</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
