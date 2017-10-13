@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swg</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - swipe gesture
+-(void)addSwipeGestureByDirection:(UISwipeGestureRecognizerDirection)direction {
+    UISwipeGestureRecognizer *swipeRecognizer=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeGesture:)];
+    swipeRecognizer.direction = direction;
+    [_cardController.view addGestureRecognizer:swipeRecognizer];
+    
+//    swipeRecognizer.delegate=self;
+}
+
+
+
+-(void)handleSwipeGesture:(UISwipeGestureRecognizer *)sender {
+
+    switch (sender.direction) {
+        case UISwipeGestureRecognizerDirectionRight:
+        {
+
+            
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionLeft:
+        {
+
+            
+        }
+            break;
+            
+        case UISwipeGestureRecognizerDirectionUp:
+        {
+            
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionDown:
+        {
+            
+        }
+            break;
+            
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>247BFA2C-39C1-498A-BD86-04B30317E75E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>swipe gesture </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
