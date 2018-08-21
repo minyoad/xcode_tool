@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>textkey</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - keyboard
+-(void)keyboardShow:(NSNotification *)notification
+{
+    //  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    NSDictionary *info  = notification.userInfo;
+    NSValue      *value = info[UIKeyboardFrameEndUserInfoKey];
+    
+    CGRect rawFrame      = [value CGRectValue];
+    CGRect _keyboardFrame = [self.view convertRect:rawFrame fromView:nil];
+    
+    DDLogInfo(@"info=%@",info);
+    
+    
+    CGRect frame = [self.view convertRect: _currentTextField.frame fromView:_currentTextField.superview];
+    int offset =(int) (frame.origin.y + frame.size.height - (self.view.frame.size.height - _keyboardFrame.size.height));
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //将视图的Y坐标向上移动offset个单位，以使下面腾出地方用于软键盘的显示
+    if(offset &gt; 0)
+        self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
+    
+    [UIView commitAnimations];
+    
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    _currentTextField=textField;
+}
+
+
+//输入框编辑完成以后，将视图恢复到原始状态
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height);
+    
+}
+
+//-(void)keyboardHide:(NSNotification *)notification{
+//    CGRect frame=self.view.frame;
+//    frame.origin.y=0;
+//
+//    self.view.frame=frame;
+//}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>31E06ABD-CB97-426D-A486-5CFE6689B1CF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>keyboard ajust for textfield</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>textfield keyboard</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
